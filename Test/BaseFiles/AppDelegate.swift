@@ -13,18 +13,29 @@ import IQKeyboardManagerSwift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared.enable = true
-        print("Documents Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found!")
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        // Instantiate root view controllers
+        let masterViewController = storyboard.instantiateViewController(ofType: ListViewController.self)
+        let detailViewController = storyboard.instantiateViewController(ofType: DetailViewController.self)
+        masterViewController.delegate = detailViewController
+        
+        // Embed in navigation controllers
+        let masterNavigationViewController = UINavigationController(rootViewController: masterViewController)
+        let detailNavigationController = UINavigationController(rootViewController: detailViewController)
+        
+        // Instantiate Rootview in splitview
+        let listPage = storyboard.instantiateSplitViewController(ofType: MainViewController.self)
+        listPage.viewControllers = [masterNavigationViewController, detailNavigationController]
+        
+        window?.rootViewController = listPage
+        window?.makeKeyAndVisible()
         return true
-    }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
     // MARK: - Core Data stack
@@ -59,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Core Data Saving support
 
     func saveContext () {
-        let context = persistentContainer.viewContext
+        let context = persistentContainer.newBackgroundContext()
         if context.hasChanges {
             do {
                 try context.save()

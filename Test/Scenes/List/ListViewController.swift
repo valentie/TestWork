@@ -12,78 +12,116 @@
 
 import UIKit
 
-protocol ListDisplayLogic: class
-{
-  func displaySomething(viewModel: List.Something.ViewModel)
+protocol ListViewControllerDelegate: class {
+    func didSelectCity(city: CityModel)
 }
 
-class ListViewController: UIViewController, ListDisplayLogic
-{
-  var interactor: ListBusinessLogic?
-  var router: (NSObjectProtocol & ListRoutingLogic & ListDataPassing)?
+protocol ListDisplayLogic: class {
+    func displayFetchList(viewModel: List.fetchData.ViewModel)
+}
 
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = ListInteractor()
-    let presenter = ListPresenter()
-    let router = ListRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+class ListViewController: UITableViewController, ListDisplayLogic {
+    var interactor: ListBusinessLogic?
+    var router: (NSObjectProtocol & ListRoutingLogic & ListDataPassing)?
+    
+    weak var delegate: ListViewControllerDelegate?
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    private var citylist = [CityModel]()
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-  
-  func doSomething()
-  {
-    let request = List.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: List.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup() {
+        let viewController = self
+        let interactor = ListInteractor()
+        let presenter = ListPresenter()
+        let router = ListRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        doFetchList()
+    }
+    
+    // MARK: Do FetchList
+    
+    func doFetchList() {
+        interactor?.doFetchList(request: List.fetchData.Request(searchText: searchBar.text ?? ""))
+    }
+    
+    func displayFetchList(viewModel: List.fetchData.ViewModel) {
+        citylist = viewModel.list
+        tableView.reloadData()
+    }
+    
+    // MARK: - TableView
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return citylist.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let object = citylist[indexPath.row]
+        let cell = tableView.dequeue(ListTableViewCell.self)
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = UIColor.white
+        }else{
+            cell.backgroundColor = UIColor(red: 235.0/255.0, green: 237.0/255.0, blue: 238.0/255.0, alpha: 1.0)
+        }
+        cell.setUpObject(object: object)
+        cell.setNeedsLayout()
+        cell.layoutIfNeeded()
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        searchBar.endEditing(true)
+        delegate?.didSelectCity(city: citylist[indexPath.row])
+        if
+          let detailViewController = delegate as? DetailViewController,
+          let detailNavigationController = detailViewController.navigationController {
+            splitViewController?.showDetailViewController(detailNavigationController, sender: nil)
+        }
+
+    }
+}
+
+// MARK: - SearchBar Delegate
+extension ListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.interactor?.doFetchList(request: List.fetchData.Request(searchText: searchText))
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
 }

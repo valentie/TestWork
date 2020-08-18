@@ -14,6 +14,7 @@ class MainViewController: UISplitViewController, UISplitViewControllerDelegate {
         super.viewDidLoad()
         self.delegate = self
         self.preferredDisplayMode = .allVisible
+        CoreDataWorker.initDatabase()
     }
     
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {

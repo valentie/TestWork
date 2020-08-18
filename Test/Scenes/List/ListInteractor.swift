@@ -14,28 +14,25 @@ import UIKit
 
 protocol ListBusinessLogic
 {
-  func doSomething(request: List.Something.Request)
+  func doFetchList(request: List.fetchData.Request)
 }
 
 protocol ListDataStore
 {
-  //var name: String { get set }
+    
 }
 
 class ListInteractor: ListBusinessLogic, ListDataStore
 {
   var presenter: ListPresentationLogic?
   var worker: ListWorker?
-  //var name: String = ""
   
-  // MARK: Do something
+  // MARK: Do FetchList
   
-  func doSomething(request: List.Something.Request)
-  {
+  func doFetchList(request: List.fetchData.Request) {
     worker = ListWorker()
-    worker?.doSomeWork()
+    let objects = worker?.doGetList(searchText: request.searchText)
     
-    let response = List.Something.Response()
-    presenter?.presentSomething(response: response)
+    presenter?.presentFetchList(response: List.fetchData.Response(list: objects ?? []))
   }
 }

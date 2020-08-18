@@ -3,29 +3,69 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		161DD8C9C0291F8EBA0BACBE /* Pods_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74F4C860A4377544DC15FD94 /* Pods_Test.framework */; };
 		EF4D1C5824EA71800029B102 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D1C5724EA71800029B102 /* AppDelegate.swift */; };
-		EF4D1C5A24EA71800029B102 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D1C5924EA71800029B102 /* SceneDelegate.swift */; };
-		EF4D1C5C24EA71800029B102 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D1C5B24EA71800029B102 /* ViewController.swift */; };
 		EF4D1C5F24EA71800029B102 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF4D1C5D24EA71800029B102 /* Main.storyboard */; };
 		EF4D1C6224EA71800029B102 /* Test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF4D1C6024EA71800029B102 /* Test.xcdatamodeld */; };
 		EF4D1C6424EA71850029B102 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF4D1C6324EA71850029B102 /* Assets.xcassets */; };
 		EF4D1C6724EA71850029B102 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF4D1C6524EA71850029B102 /* LaunchScreen.storyboard */; };
+		EF4D1C7024EA72B20029B102 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = EF4D1C6F24EA72B20029B102 /* cities.json */; };
+		EF4D1C7824EA74A10029B102 /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D1C7224EA74A10029B102 /* ListPresenter.swift */; };
+		EF4D1C7924EA74A10029B102 /* ListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D1C7324EA74A10029B102 /* ListWorker.swift */; };
+		EF4D1C7A24EA74A10029B102 /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D1C7424EA74A10029B102 /* ListRouter.swift */; };
+		EF4D1C7B24EA74A10029B102 /* ListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D1C7524EA74A10029B102 /* ListModels.swift */; };
+		EF4D1C7C24EA74A10029B102 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D1C7624EA74A10029B102 /* ListViewController.swift */; };
+		EF4D1C7D24EA74A10029B102 /* ListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D1C7724EA74A10029B102 /* ListInteractor.swift */; };
+		EF4D1C8624EA74C20029B102 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D1C8024EA74C20029B102 /* DetailPresenter.swift */; };
+		EF4D1C8824EA74C20029B102 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D1C8224EA74C20029B102 /* DetailRouter.swift */; };
+		EF4D1C8924EA74C20029B102 /* DetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D1C8324EA74C20029B102 /* DetailModels.swift */; };
+		EF4D1C8A24EA74C20029B102 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D1C8424EA74C20029B102 /* DetailViewController.swift */; };
+		EF4D1C8B24EA74C20029B102 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D1C8524EA74C20029B102 /* DetailInteractor.swift */; };
+		EF4D1C8E24EA761E0029B102 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D1C8D24EA761E0029B102 /* MainViewController.swift */; };
+		EF4D1C9524EA79650029B102 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D1C9424EA79650029B102 /* ListTableViewCell.swift */; };
+		EF4D1C9724EA79B70029B102 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D1C9624EA79B70029B102 /* CityModel.swift */; };
+		EF4D1C9B24EA81140029B102 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D1C9924EA81130029B102 /* UITableView.swift */; };
+		EF4D1C9E24EA81520029B102 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D1C9D24EA81520029B102 /* Reusable.swift */; };
+		EF4D1CA024EA81D30029B102 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D1C9F24EA81D30029B102 /* UIView.swift */; };
+		EF52A7BD24EB2A7200D331E6 /* CoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF52A7BC24EB2A7200D331E6 /* CoreDataWorker.swift */; };
+		EF52A7BF24EB2D5100D331E6 /* JSONExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF52A7BE24EB2D5100D331E6 /* JSONExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20DB6E916DBE16B8D4F904AF /* Pods-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.release.xcconfig"; path = "Target Support Files/Pods-Test/Pods-Test.release.xcconfig"; sourceTree = "<group>"; };
+		3374AE093CA82FEDEDB5A130 /* Pods-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.debug.xcconfig"; path = "Target Support Files/Pods-Test/Pods-Test.debug.xcconfig"; sourceTree = "<group>"; };
+		74F4C860A4377544DC15FD94 /* Pods_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF4D1C5424EA71800029B102 /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF4D1C5724EA71800029B102 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EF4D1C5924EA71800029B102 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EF4D1C5B24EA71800029B102 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EF4D1C5E24EA71800029B102 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EF4D1C6124EA71800029B102 /* Test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Test.xcdatamodel; sourceTree = "<group>"; };
 		EF4D1C6324EA71850029B102 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF4D1C6624EA71850029B102 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF4D1C6824EA71850029B102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF4D1C6F24EA72B20029B102 /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
+		EF4D1C7224EA74A10029B102 /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
+		EF4D1C7324EA74A10029B102 /* ListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWorker.swift; sourceTree = "<group>"; };
+		EF4D1C7424EA74A10029B102 /* ListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouter.swift; sourceTree = "<group>"; };
+		EF4D1C7524EA74A10029B102 /* ListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModels.swift; sourceTree = "<group>"; };
+		EF4D1C7624EA74A10029B102 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		EF4D1C7724EA74A10029B102 /* ListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractor.swift; sourceTree = "<group>"; };
+		EF4D1C8024EA74C20029B102 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		EF4D1C8224EA74C20029B102 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
+		EF4D1C8324EA74C20029B102 /* DetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModels.swift; sourceTree = "<group>"; };
+		EF4D1C8424EA74C20029B102 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		EF4D1C8524EA74C20029B102 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
+		EF4D1C8D24EA761E0029B102 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EF4D1C9424EA79650029B102 /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		EF4D1C9624EA79B70029B102 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
+		EF4D1C9924EA81130029B102 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		EF4D1C9D24EA81520029B102 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		EF4D1C9F24EA81D30029B102 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		EF52A7BC24EB2A7200D331E6 /* CoreDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWorker.swift; sourceTree = "<group>"; };
+		EF52A7BE24EB2D5100D331E6 /* JSONExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +73,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				161DD8C9C0291F8EBA0BACBE /* Pods_Test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A68E4C92FD7D6CF64EDEE84 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74F4C860A4377544DC15FD94 /* Pods_Test.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EDC670C9592812E9386B81F7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3374AE093CA82FEDEDB5A130 /* Pods-Test.debug.xcconfig */,
+				20DB6E916DBE16B8D4F904AF /* Pods-Test.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EF4D1C4B24EA71800029B102 = {
 			isa = PBXGroup;
 			children = (
 				EF4D1C5624EA71800029B102 /* Test */,
 				EF4D1C5524EA71800029B102 /* Products */,
+				EDC670C9592812E9386B81F7 /* Pods */,
+				2A68E4C92FD7D6CF64EDEE84 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +118,106 @@
 		EF4D1C5624EA71800029B102 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				EF4D1C5724EA71800029B102 /* AppDelegate.swift */,
-				EF4D1C5924EA71800029B102 /* SceneDelegate.swift */,
-				EF4D1C5B24EA71800029B102 /* ViewController.swift */,
-				EF4D1C5D24EA71800029B102 /* Main.storyboard */,
-				EF4D1C6324EA71850029B102 /* Assets.xcassets */,
-				EF4D1C6524EA71850029B102 /* LaunchScreen.storyboard */,
+				EF4D1C9824EA80410029B102 /* Extensions */,
 				EF4D1C6824EA71850029B102 /* Info.plist */,
-				EF4D1C6024EA71800029B102 /* Test.xcdatamodeld */,
+				EF4D1C6E24EA72670029B102 /* BaseFiles */,
+				EF4D1C5D24EA71800029B102 /* Main.storyboard */,
+				EF4D1C9024EA77C50029B102 /* Models */,
+				EF4D1C7124EA74050029B102 /* Resources */,
+				EF4D1C7E24EA74A50029B102 /* Scenes */,
+				EF4D1C9124EA77CA0029B102 /* Worker */,
 			);
 			path = Test;
+			sourceTree = "<group>";
+		};
+		EF4D1C6E24EA72670029B102 /* BaseFiles */ = {
+			isa = PBXGroup;
+			children = (
+				EF4D1C5724EA71800029B102 /* AppDelegate.swift */,
+				EF4D1C6524EA71850029B102 /* LaunchScreen.storyboard */,
+			);
+			path = BaseFiles;
+			sourceTree = "<group>";
+		};
+		EF4D1C7124EA74050029B102 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EF4D1C6324EA71850029B102 /* Assets.xcassets */,
+				EF4D1C6F24EA72B20029B102 /* cities.json */,
+				EF4D1C6024EA71800029B102 /* Test.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EF4D1C7E24EA74A50029B102 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EF4D1C8F24EA76340029B102 /* Main */,
+				EF4D1C7F24EA74AF0029B102 /* List */,
+				EF4D1C8C24EA74C50029B102 /* Detail */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		EF4D1C7F24EA74AF0029B102 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				EF4D1C7224EA74A10029B102 /* ListPresenter.swift */,
+				EF4D1C7324EA74A10029B102 /* ListWorker.swift */,
+				EF4D1C7424EA74A10029B102 /* ListRouter.swift */,
+				EF4D1C7524EA74A10029B102 /* ListModels.swift */,
+				EF4D1C7624EA74A10029B102 /* ListViewController.swift */,
+				EF4D1C9424EA79650029B102 /* ListTableViewCell.swift */,
+				EF4D1C7724EA74A10029B102 /* ListInteractor.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		EF4D1C8C24EA74C50029B102 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				EF4D1C8024EA74C20029B102 /* DetailPresenter.swift */,
+				EF4D1C8224EA74C20029B102 /* DetailRouter.swift */,
+				EF4D1C8324EA74C20029B102 /* DetailModels.swift */,
+				EF4D1C8424EA74C20029B102 /* DetailViewController.swift */,
+				EF4D1C8524EA74C20029B102 /* DetailInteractor.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		EF4D1C8F24EA76340029B102 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				EF4D1C8D24EA761E0029B102 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		EF4D1C9024EA77C50029B102 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EF4D1C9624EA79B70029B102 /* CityModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EF4D1C9124EA77CA0029B102 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				EF52A7BC24EB2A7200D331E6 /* CoreDataWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		EF4D1C9824EA80410029B102 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EF4D1C9F24EA81D30029B102 /* UIView.swift */,
+				EF4D1C9924EA81130029B102 /* UITableView.swift */,
+				EF4D1C9D24EA81520029B102 /* Reusable.swift */,
+				EF52A7BE24EB2D5100D331E6 /* JSONExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +227,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF4D1C6B24EA71850029B102 /* Build configuration list for PBXNativeTarget "Test" */;
 			buildPhases = (
+				3D8E5925CFDAF4FB2024CBF8 /* [CP] Check Pods Manifest.lock */,
 				EF4D1C5024EA71800029B102 /* Sources */,
 				EF4D1C5124EA71800029B102 /* Frameworks */,
 				EF4D1C5224EA71800029B102 /* Resources */,
+				FC832669DDA0D9F066F17613 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,6 +280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF4D1C7024EA72B20029B102 /* cities.json in Resources */,
 				EF4D1C6724EA71850029B102 /* LaunchScreen.storyboard in Resources */,
 				EF4D1C6424EA71850029B102 /* Assets.xcassets in Resources */,
 				EF4D1C5F24EA71800029B102 /* Main.storyboard in Resources */,
@@ -136,15 +289,74 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3D8E5925CFDAF4FB2024CBF8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Test-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC832669DDA0D9F066F17613 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Test/Pods-Test-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Test/Pods-Test-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Test/Pods-Test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EF4D1C5024EA71800029B102 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF4D1C5C24EA71800029B102 /* ViewController.swift in Sources */,
+				EF52A7BD24EB2A7200D331E6 /* CoreDataWorker.swift in Sources */,
+				EF4D1CA024EA81D30029B102 /* UIView.swift in Sources */,
+				EF4D1C8A24EA74C20029B102 /* DetailViewController.swift in Sources */,
+				EF4D1C9724EA79B70029B102 /* CityModel.swift in Sources */,
+				EF4D1C9524EA79650029B102 /* ListTableViewCell.swift in Sources */,
 				EF4D1C6224EA71800029B102 /* Test.xcdatamodeld in Sources */,
+				EF4D1C8824EA74C20029B102 /* DetailRouter.swift in Sources */,
+				EF52A7BF24EB2D5100D331E6 /* JSONExtension.swift in Sources */,
+				EF4D1C9B24EA81140029B102 /* UITableView.swift in Sources */,
+				EF4D1C7924EA74A10029B102 /* ListWorker.swift in Sources */,
+				EF4D1C8624EA74C20029B102 /* DetailPresenter.swift in Sources */,
+				EF4D1C7824EA74A10029B102 /* ListPresenter.swift in Sources */,
+				EF4D1C7B24EA74A10029B102 /* ListModels.swift in Sources */,
+				EF4D1C7A24EA74A10029B102 /* ListRouter.swift in Sources */,
+				EF4D1C8E24EA761E0029B102 /* MainViewController.swift in Sources */,
+				EF4D1C8924EA74C20029B102 /* DetailModels.swift in Sources */,
 				EF4D1C5824EA71800029B102 /* AppDelegate.swift in Sources */,
-				EF4D1C5A24EA71800029B102 /* SceneDelegate.swift in Sources */,
+				EF4D1C8B24EA74C20029B102 /* DetailInteractor.swift in Sources */,
+				EF4D1C9E24EA81520029B102 /* Reusable.swift in Sources */,
+				EF4D1C7D24EA74A10029B102 /* ListInteractor.swift in Sources */,
+				EF4D1C7C24EA74A10029B102 /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +432,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -274,7 +486,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -286,10 +498,12 @@
 		};
 		EF4D1C6C24EA71850029B102 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3374AE093CA82FEDEDB5A130 /* Pods-Test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,10 +517,12 @@
 		};
 		EF4D1C6D24EA71850029B102 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20DB6E916DBE16B8D4F904AF /* Pods-Test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

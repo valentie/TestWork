@@ -14,7 +14,7 @@ import UIKit
 
 protocol DetailBusinessLogic
 {
-  func doSomething(request: Detail.Something.Request)
+  func doSetMap(request: Detail.SetMap.Request)
 }
 
 protocol DetailDataStore
@@ -25,17 +25,11 @@ protocol DetailDataStore
 class DetailInteractor: DetailBusinessLogic, DetailDataStore
 {
   var presenter: DetailPresentationLogic?
-  var worker: DetailWorker?
-  //var name: String = ""
   
-  // MARK: Do something
+  // MARK: Do setMap
   
-  func doSomething(request: Detail.Something.Request)
+  func doSetMap(request: Detail.SetMap.Request)
   {
-    worker = DetailWorker()
-    worker?.doSomeWork()
-    
-    let response = Detail.Something.Response()
-    presenter?.presentSomething(response: response)
+    presenter?.presentSetMap(response: Detail.SetMap.Response(object: request.object))
   }
 }

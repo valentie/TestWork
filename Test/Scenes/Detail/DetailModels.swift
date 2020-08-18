@@ -12,20 +12,20 @@
 
 import UIKit
 
-enum Detail
-{
+enum Detail {
   // MARK: Use cases
   
-  enum Something
-  {
-    struct Request
-    {
+  enum SetMap {
+    struct Request {
+        let object: CityModel
     }
-    struct Response
-    {
+    struct Response {
+        let object: CityModel
     }
-    struct ViewModel
-    {
+    struct ViewModel {
+        let name: String
+        let lat: Double
+        let lon: Double
     }
   }
 }

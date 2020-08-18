@@ -16,16 +16,15 @@ enum List
 {
   // MARK: Use cases
   
-  enum Something
-  {
-    struct Request
-    {
+  enum fetchData {
+    struct Request {
+        let searchText: String
     }
-    struct Response
-    {
+    struct Response {
+        let list: CitiesModel
     }
-    struct ViewModel
-    {
+    struct ViewModel {
+        let list: CitiesModel
     }
   }
 }

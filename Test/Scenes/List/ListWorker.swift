@@ -12,9 +12,8 @@
 
 import UIKit
 
-class ListWorker
-{
-  func doSomeWork()
-  {
-  }
+class ListWorker {
+    func doGetList(searchText: String) -> CitiesModel {
+        return CoreDataWorker.searchCity(textSearch: searchText)
+    }
 }

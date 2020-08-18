@@ -12,20 +12,16 @@
 
 import UIKit
 
-protocol ListPresentationLogic
-{
-  func presentSomething(response: List.Something.Response)
+protocol ListPresentationLogic {
+  func presentFetchList(response: List.fetchData.Response)
 }
 
-class ListPresenter: ListPresentationLogic
-{
+class ListPresenter: ListPresentationLogic {
   weak var viewController: ListDisplayLogic?
   
   // MARK: Do something
   
-  func presentSomething(response: List.Something.Response)
-  {
-    let viewModel = List.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
+  func presentFetchList(response: List.fetchData.Response) {
+    viewController?.displayFetchList(viewModel: List.fetchData.ViewModel(list: response.list))
   }
 }
